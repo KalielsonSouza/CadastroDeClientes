@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://kit.fontawesome.com/cf5b293412.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+    </style>
+    <title>PWeb - Kalielson Matheus</title>
+</head>
+
+<body class="pageBodyZ">
+
+    <div class="sidebar" id="siderbar1">
+
+    </div>
+    <!-- Page content -->
+    <div class="content">
+        <h1 id="pageTitle">LISTA DE PESSOAS</h1>
+        <div class="row">
+            <div class="column">
+                <table>
+                    <thead>
+                        <tr>
+                        <th>#ID</th>
+                        <th>NOME COMPLETO</th>
+                        <th>DATA DE NASCIMENTO</th>
+                        <th>E-MAL</th>
+                        <th>SEXO</th>
+                        <th>EDITAR</th>
+                        <th>REMOVER</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="pessoa: ${pessoas}">
+                        <td th:text="${pessoa.id}"></td>
+                        <td th:text="${pessoa.nome}"></td>
+                        <td>
+                        <a id="emailLinkInTable" th:href="'mailto:'+${pessoa.email}"th:text="${pessoa.email}"></a>
+                        </td>
+                        <td th:text="${#temporals.format(pessoa.dataNascimento, 'dd/MM/yyyy')}"></td>
+                        <td th:text="${pessoa.genero}"></td>
+                        <td>
+                        <a id="btnEditarTable" th:href="@{/editar/{id}(id=${pessoa.id})}">EDITAR</a>
+                        </td>
+                        <td>
+                          <a id="btnRemoverTable" th:href="@{/remover/{id}(id=${pessoa.id})}">REMOVER</a>
+                        </td>
+                        </tr>
+                    </tbody>
+                  </table>
+             
+            </div>
+           
+          </div>
+          
+    </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+body {
+   
+    background-color: #0d1316;
+
+    font-family: 'Poppins', sans-serif;
+}
+ 
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+    
+}
+
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+}
+/* ==================================== pages custom Styles Start ==================================== */
+#pageTitle {
+    text-align: center; 
+    padding-left: 2rem;
+    color:white ;
+}
+h2, #paragraNoticias{
+    color: white;
+}
+#btnRegister, #btnReset {
+ background-color: #A52A2A;
+}
+
+#editBTN, #editEXC
+{
+    background: #A52A2A;
+    
+    border: none;
+    color: white;
+        
+      
+}
+#siderbar1{
+  text-align: center;
+}
+/* ==================================== pages custom Styles End ==================================== */
+/* ==================================== Custom table Styles STAR ==================================== */
+table {
+    
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: relative;
+  }
+  
+  table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+  
+  table tr {
+    background-color: #A52A2A;
+    border: 0.1em solid white;
+    padding: .35em;
+    color: #ddd;
+    box-shadow: 4px 8px;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+  #emailLinkInTable, #btnEditarTable, #btnRemoverTable {
+	color: white;
+}
+/* ==================================== Custom table Styles End ==================================== */
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 20px;
+    margin-left: 25%;
+    
+  }
+
+ /* ==================================== Side navigation menu Start ==================================== */
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.sidebar a {
+    display: block;
+    color: rgb(255, 255, 255);
+    background-color: #A52A2A;
+    padding: 16px;
+    text-decoration: none;
+    margin: 0;
+    position: relative;
+    top: 10%;
+    -ms-transform: translateY(-60%);
+    transform: translateY(-50%);
+    width: 45px;
+    font-size: 0.80rem;
+}
+
+
+/* Active/current link */
+
+.sidebar a.active {
+    background-color: #A52A2A;
+    color: white;
+    margin: 0;
+    position: relative;
+    top: 10%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 45px;
+    font-size: 0.80rem;
+}
+
+
+/* Links on mouse-over */
+
+.sidebar a:hover:not(.active) {
+    background-color: #ffffff;
+    color: #A52A2A;
+}
+
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+
+div.content {
+    margin-left: 100px;
+    padding: 1px 16px;
+    height: 59rem;
+}
+
+
+/* ==================================== Side navigation menu End ==================================== */

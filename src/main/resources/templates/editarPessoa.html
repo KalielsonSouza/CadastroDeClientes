@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://kit.fontawesome.com/cf5b293412.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+    </style>
+    <title>PWeb - Kalielson Matheus</title>
+</head>
+
+<body class="pageBodyZ">
+
+    <div class="sidebar" id="siderbar1">
+
+    </div>
+    <!-- Page content -->
+    <div class="content">
+        <h1 id="pageTitle">FORMULÁRIO PARA CADASTRO DE PESSOAS</h1>
+        <div class="row">
+            <div class="column" style="background-color:rgb(165,42,42,0.8); color: white; box-shadow: 4px 8px;">
+                
+                <form class="pure-form pure-form-stacked" 
+                	  method="POST"
+                	  th:object="${pessoa}"
+                	  th:action="@{/editar/{id}(id=${pessoa.id})}">
+                    <fieldset>
+                        <div class="pure-g">
+                            <div class="pure-u-1 pure-u-md-1-3">
+                                <label for="multi-first-name">NOME COMPLETO</label>
+                                <input type="text" id="multi-first-name" class="pure-u-23-24"  required="" th:field="*{nome}" />
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-3">
+                                <label for="multi-last-name">DATA DE NASCIMENTO</label>
+                                <input type="date" id="multi-last-name" class="pure-u-23-24" required="" th:field="*{dataNascimento}" />
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-3">
+                                <label for="multi-email">E-Mail</label>
+                                <input type="email" id="multi-email" class="pure-u-23-24" required="" th:field="*{email}" />
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-3">
+                                <label for="checkbox-radio-option-two" class="pure-radio">
+                                    <input type="radio" id="checkbox-radio-option-two" name="optionsRadios" value="Feminino"  required="" th:field="*{genero}" /> Feminino
+                                </label>
+                                <label for="checkbox-radio-option-three" class="pure-radio">
+                                    <input type="radio" id="checkbox-radio-option-three" name="optionsRadios" value="Masculino" required="" th:field="*{genero}" /> Masculino
+                                </label>
+                                <label for="checkbox-radio-option-three" class="pure-radio">
+                                    <input type="radio" id="checkbox-radio-option-four" name="optionsRadios" value="naoInformado"  required="" th:field="*{genero}"  /> Não Informar
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="pure-button pure-button-primary" id="btnRegister">Editar!</button>
+                        <button type="reset" class="pure-button pure-button-primary" id="btnReset">Limpar!</button>
+                    </fieldset>
+                </form>
+            </div>
+          </div> 
+    </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+</html>
